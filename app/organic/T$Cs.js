@@ -1,17 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, Alert } from 'react-native';
-import { pxToDpW, pxToDpH } from './tools/pxToDp'
+import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { pxToDpW, pxToDpH } from '../tools/pxToDp'
 import { useRouter } from 'expo-router';
-import { ButtonBorderWhite } from './components/ButtonBorderWhite';
 
 export default function App() {
   const navigation = useRouter()
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" backgroundColor='#19233C' />
-      <ButtonBorderWhite content={'Organic'} onClick={() => alert('test')} />
+      <StatusBar style="auto" backgroundColor='#19233C'/>
+
+      <Pressable onPress={() => navigation.push('/organic/T$cs')}>
+        <View style={styles.account_btn}>
+          <Text style={styles.btn_text}>Login</Text>
+        </View>
+      </Pressable>
+
       <View style={{ height: pxToDpH(13) }} />
-      <ButtonBorderWhite content={'API'} onClick={() => console.log('api')} />
+
+      <Pressable onPress={() => navigation.push('/api/')}>
+        <View style={styles.account_btn}>
+          <Text style={styles.btn_text}>Test</Text>
+        </View>
+      </Pressable>
     </View>
   );
 }
