@@ -3,61 +3,59 @@ import {
   View,
   StyleSheet,
   Pressable,
-  SafeAreaView
+  SafeAreaView,
+  StatusBar
 } from 'react-native';
-import * as React from 'react'
-import { StatusBar } from 'expo-status-bar'
+import React, { useCallback } from 'react'
+import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
 import { useRouter } from 'expo-router';
-import { pxToDpW, pxToDpH, windowWidth, windowHeight } from './tools/pxToDp'
+import { colors, Heading4, Medium, MediumStrong } from './GlobalStyle'
+import { pxToDp, pxToDpW, windowWidth, windowHeight } from './tools/Dimension'
 import BgHome from '../assets/svgs/home-bg.svg'
 import Logo from '../assets/svgs/text_cred.svg'
+import { Button } from 'react-native-paper';
 
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const navigation = useRouter()
 
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     'AzoSansMedium': require('../assets/fonts/AzoSans-Medium.otf'),
     'AzoSansRegular': require('../assets/fonts/AzoSans-Regular.otf'),
   });
 
-  // if (fontsLoaded) {
-  //   return null;
-  // }
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded || fontError) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded, fontError]);
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
 
   return (
-    <SafeAreaView >
-      <StatusBar style="auto" backgroundColor='#F5A054' />
-      <BgHome width={windowWidth} height={windowHeight} />
+    <SafeAreaView onLayout={onLayoutRootView}>
+      <StatusBar backgroundColor={colors.orange} />
+      <BgHome width={'100%'} height={'100%'} />
       <View style={{ position: 'absolute' }}>
         <View style={styles.container}>
-          <View style={{ alignItems: 'center' }}>
-            <Logo style={{ top: pxToDpH(145 + 12) }} />
-            <Text style={styles.tip}>A new flexible form of credit, that puts you in control</Text>
-          </View>
+          <Logo width={pxToDp(152)} height={pxToDp(50)} style={{ top: pxToDp(157) }} />
+          <Text style={styles.tip_text}>A new flexible form of credit, that puts you in control</Text>
 
           <View style={styles.bottom}>
-            <Pressable onPress={() => navigation.push('/decision')}>
-              <View style={[styles.account_btn, { backgroundColor: '#F5A054' }]}>
-                <Text style={[styles.btn_text, { color: '#19233C' }]}>Create an account</Text>
-              </View>
-            </Pressable>
+            <Button mode='contained' style={styles.account_btn} buttonColor={colors.orange} children={'Create an account'} labelStyle={[MediumStrong, { color: colors.navy }]} onPress={() => navigation.push('/organic/T$Cs')} />
+
+            <Button mode='outlined' style={[styles.account_btn, { borderColor: colors.white, borderWidth: 1 }]} children={'Already got a code'} labelStyle={[styles.btn_text, { color: colors.white }]} onPress={() => navigation.push('/organic/MobileNumber')} />
 
             <Pressable onPress={() => navigation.push('/decision')}>
-              <View style={[styles.account_btn, { borderColor: '#FFFFFF', borderWidth: 1 }]}>
-                <Text style={[styles.btn_text, { color: '#FFFFFF' }]}>Already got a code</Text>
+              <View style={[styles.account_btn, { width: pxToDp(218), flexDirection: 'row', alignItems: 'center' }]}>
+                <Text style={styles.ask_text}>Already have an account?</Text>
+                <Text style={[styles.btn_text, { width: pxToDp(53), color: colors.white }]}>Login</Text>
               </View>
             </Pressable>
-
-            <Pressable onPress={() => console.log('test....')}>
-              <View style={[styles.account_btn, { width: pxToDpW(218), flexDirection: 'row', alignItems: 'center' }]}>
-                <Text style={[styles.btn_text, { color: '#CBCDD3', fontWeight: '400' }]}>Already have an account?</Text>
-                {/* <View style={{ width: pxToDpH(13) }} /> */}
-                <Text style={[styles.btn_text, { width: pxToDpW(53), color: '#FFFFFF' }]}>Login</Text>
-              </View>
-            </Pressable>
-
           </View>
         </View>
       </View>
@@ -71,43 +69,33 @@ const styles = StyleSheet.create({
     width: windowWidth,
     height: windowHeight,
     alignItems: 'center',
-    justifyContent: 'space-between',
   },
-  image: {
-    flex: 1,
-    width: windowWidth,
-    height: windowHeight,
-    resizeMode: 'cover',
-    justifyContent: 'center',
-  },
-  tip: {
-    fontSize: 18,
-    lineHeight: 21.6,
-    fontWeight: '700',
-    textAlign: 'center',
-    color: '#19233C',
-    fontFamily: 'AzoSansRegular',
-    marginHorizontal: pxToDpW(30),
-    top: pxToDpH(145 + 50)
+  tip_text: {
+    ...Heading4,
+    fontSize: pxToDp(18),
+    color: colors.navy,
+    marginHorizontal: pxToDp(30),
+    top: pxToDp(243 - 50)
   },
   bottom: {
-    width: pxToDpW(341),
-    height: pxToDpH(160),
+    width: pxToDp(341),
+    height: pxToDp(160),
     justifyContent: 'space-between',
     alignItems: 'center',
-    bottom: pxToDpH(16)
+    position: 'absolute',
+    top: pxToDp(644),
   },
   btn_text: {
-    fontSize: 14,
-    lineHeight: 18.9,
-    textAlign: 'center',
-    fontFamily: 'AzoSansMedium',
-    fontWeight: 700
+    ...MediumStrong,
+  },
+  ask_text: {
+    ...Medium,
+    color: colors.light_text
   },
   account_btn: {
     width: pxToDpW(341),
-    height: pxToDpH(48),
-    borderRadius: 4,
+    height: pxToDp(48),
+    borderRadius: pxToDp(4),
     alignContent: 'center',
     justifyContent: 'center',
   },

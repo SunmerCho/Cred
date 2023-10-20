@@ -1,17 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable, Alert } from 'react-native';
-import { pxToDpW, pxToDpH } from './tools/pxToDp'
+import { StyleSheet,  View, } from 'react-native';
+import { pxToDp } from './tools/Dimension'
 import { useRouter } from 'expo-router';
-import { ButtonBorderWhite } from './components/ButtonBorderWhite';
+import { colors} from './GlobalStyle'
+import { ButtonBorderOrange } from './components/Button';
 
 export default function App() {
   const navigation = useRouter()
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" backgroundColor='#19233C' />
-      <ButtonBorderWhite content={'Organic'} onClick={() => alert('test')} />
-      <View style={{ height: pxToDpH(13) }} />
-      <ButtonBorderWhite content={'API'} onClick={() => console.log('api')} />
+      <StatusBar style="auto" backgroundColor={colors.navy} />
+      <ButtonBorderOrange title='Organic' onPress={() => navigation.push('/organic/T$Cs')} />
+      <View style={{ height: pxToDp(13) }} />
+      <ButtonBorderOrange title={'API'} onPress={() => (navigation.push('/organic/T$Cs'))} />
     </View>
   );
 }
@@ -21,23 +22,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#19233C'
-  },
-  btn_text: {
-    fontSize: 14,
-    lineHeight: 18.9,
-    textAlign: 'center',
-    fontFamily: 'AzoSansMedium',
-    color: '#FFFFFF',
-    fontWeight: '700'
-  },
-  account_btn: {
-    width: pxToDpW(357),
-    height: pxToDpH(48),
-    borderRadius: 4,
-    alignContent: 'center',
-    justifyContent: 'center',
-    borderColor: '#F5A054',
-    borderWidth: 1
+    backgroundColor: colors.navy
   },
 });
