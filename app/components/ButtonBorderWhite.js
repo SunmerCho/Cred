@@ -5,7 +5,7 @@ import { pxToDpW, pxToDpH } from '../tools/pxToDp';
 // create a component
 export function ButtonBorderWhite({ content, onClick }) {
   return (
-    <Pressable onPress={() => {()=> onClick }}>
+    <Pressable onPress={onClick}>
       <View style={styles.container}>
         <Text style={styles.btnText}>{content}</Text>
       </View>
