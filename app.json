@@ -3,7 +3,7 @@
     "name": "cred",
     "slug": "cred",
     "version": "1.0.0",
-    "scheme":"",
+    "scheme":"uk.co.getcred.app",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",

@@ -1,4 +1,4 @@
-import { Dimensions,StatusBar } from 'react-native'
+import { Dimensions, StatusBar } from 'react-native'
 
 export const uiWidthPx = 390
 export const uiHeightPx = 844

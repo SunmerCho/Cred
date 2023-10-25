@@ -2,59 +2,61 @@ import {
     StyleSheet,
     Text,
     View,
-    SafeAreaView,
-    ScrollView,
     StatusBar,
 } from 'react-native';
 import React, { useState } from 'react';
-import { useRouter } from 'expo-router';
-import { pxToDp, pxToDpW } from '../tools/Dimension'
-import { colors, Heading2, Regular3, MediumStrong, MediumStrong2 } from '../GlobalStyle'
+import { router } from 'expo-router';
+import { pxToDp, pxToDpW } from '../Dimension'
+import { Heading2, Regular3, MediumStrong, MediumStrong2 } from '../FontFamily'
+import { Primary, Secondary, TextLight } from '../Colors'
 import { Header } from '../components/HeaderBar'
 import Pin from '../../assets/svgs/pin.svg'
-import { Button } from 'react-native-paper';
+import { Button, TextInput } from 'react-native-paper';
 
 export default function App() {
-    const navigation = useRouter()
-    const [text, onChangeText] = useState("");
+    const [input, setInput] = useState('');
+    const handleInput = (text) => {
+        setInput(text);
+
+        if (text.length == 6) {
+            router.push('organic/EmailAddress')
+        }
+    }
+
     return (
-        <SafeAreaView style={styles.container}>
-            <StatusBar style="auto" backgroundColor='#19233C' />
+        <View style={styles.container}>
+            <StatusBar backgroundColor={Primary.navy} />
 
-            <ScrollView >
-                <View>
-                    <Header step={'1'} progress={3 / 26} display={'flex'} />
+            <Header step={'1'} title={'/3    Account setup'} progress={3 / 26} display={'flex'} />
 
-                    <Pin width={pxToDp(75)} height={pxToDp(73)} style={{ marginTop: pxToDp(30), alignSelf: 'center' }} />
+            <Pin width={pxToDp(75)} height={pxToDp(73)} style={{ marginTop: pxToDp(30), alignSelf: 'center' }} />
 
-                    <Text style={styles.title_text}>Please enter your verification code</Text>
+            <Text style={styles.title_text}>Please enter your verification code</Text>
 
-                    <Text style={styles.desc_text}>We’ve sent a verification code to</Text>
+            <Text style={styles.desc_text}>We’ve sent a verification code to</Text>
 
-                    <Text style={styles.phone_text}>07234 569999</Text>
+            <Text style={styles.phone_text}>07234 569999</Text>
 
-                    <View style={styles.circle_group}>
-                        <View style={styles.circle} />
-                        <View style={styles.circle} />
-                        <View style={styles.circle} />
-                        <View style={styles.circle} />
-                        <View style={styles.circle} />
-                        <View style={styles.circle} />
-                    </View>
+            <TextInput style={styles.input} keyboardType='numeric' onChangeText={handleInput} maxLength={6} autoFocus={true}/>
 
-                    <Button style={styles.sms_btn} children={'Haven’t received the SMS?'} labelStyle={[MediumStrong, { color: colors.light_text }]} onPress={() => navigation.push('organic/EmailAddress')} />
+            <View style={styles.circle_group}>
+                <View style={[styles.circle, { backgroundColor: input.length > 0 ? Primary.orange : Primary.navy60 }]} />
+                <View style={[styles.circle, { backgroundColor: input.length > 1 ? Primary.orange : Primary.navy60 }]} />
+                <View style={[styles.circle, { backgroundColor: input.length > 2 ? Primary.orange : Primary.navy60 }]} />
+                <View style={[styles.circle, { backgroundColor: input.length > 3 ? Primary.orange : Primary.navy60 }]} />
+                <View style={[styles.circle, { backgroundColor: input.length > 4 ? Primary.orange : Primary.navy60 }]} />
+                <View style={[styles.circle, { backgroundColor: input.length > 5 ? Primary.orange : Primary.navy60 }]} />
+            </View>
 
-                </View>
-            </ScrollView>
-
-        </SafeAreaView>
+            <Button style={styles.sms_btn} children={'Haven’t received the SMS?'} labelStyle={[MediumStrong, { color: TextLight.low }]} onPress={() => router.push('organic/EmailAddress')} />
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.navy,
+        backgroundColor: Primary.navy,
         paddingTop: pxToDp(16),
     },
     pin: {
@@ -62,24 +64,25 @@ const styles = StyleSheet.create({
     },
     title_text: {
         ...Heading2,
-        color: colors.white,
+        color: Secondary.white,
         marginTop: pxToDp(24),
     },
     desc_text: {
         ...Regular3,
-        color: colors.light_text,
+        color: TextLight.low,
         marginTop: pxToDp(24),
         marginHorizontal: pxToDp(16)
     },
     phone_text: {
         ...MediumStrong2,
-        color: colors.light_text,
+        color: TextLight.low,
         marginHorizontal: pxToDp(16),
     },
     input: {
-        height: pxToDp(30),
-        marginTop: pxToDp(30),
-        marginHorizontal: pxToDp(16),
+        width: 0,
+        height: 0,
+        position: 'absolute',
+        top: -100
     },
     sms_btn: {
         width: pxToDpW(356),
@@ -100,7 +103,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         width: pxToDp(16),
         height: pxToDp(16),
-        backgroundColor: '#757B8A',
         borderStyle: 'solid',
         borderRadius: pxToDp(16),
         margin: 8

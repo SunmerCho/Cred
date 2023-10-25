@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet } from 'react-native';
+import { pxToDp } from '../Dimension';
+import { Primary } from '../Colors'
 import Checked from '../../assets/svgs/checked.svg';
-import { pxToDp } from '../tools/Dimension';
-import { colors } from '.././GlobalStyle'
 
 export function Checkbox({ onChange, checked }) {
   return (
@@ -19,16 +19,11 @@ const styles = StyleSheet.create({
     height: pxToDp(20),
     borderRadius: pxToDp(4),
     borderWidth: pxToDp(2),
-    borderColor: '#A3A7B1',
+    borderColor: Primary.navy40,
     justifyContent: 'center',
     alignItems: 'center',
   },
   checkboxChecked: {
-    backgroundColor: colors.orange,
-  },
-  checkboxLabel: {
-    marginLeft: 8,
-    fontWeight: 500,
-    fontSize: 18,
+    backgroundColor: Primary.orange,
   },
 });

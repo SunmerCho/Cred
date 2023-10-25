@@ -2,12 +2,12 @@ import {
   StyleSheet,
   Text,
   View,
-  StatusBar
+  StatusBar,
 } from 'react-native';
 import React, { useState } from 'react';
 import { router } from 'expo-router';
 import { pxToDp } from '../Dimension'
-import { Heading2, Regular3, Samll } from '../FontFamily'
+import { Heading2, Regular3 } from '../FontFamily'
 import { Primary, Secondary, TextLight } from '../Colors'
 import { Header } from '../components/HeaderBar'
 import { ButtonOrange } from '../components/Button';
@@ -18,18 +18,17 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={Primary.navy}  />
+      <StatusBar backgroundColor={Primary.navy} />
 
-      <Header step={'1'} title={'/3    Account setup'} progress={2 / 26} display={'flex'} />
+      <Header step={'3'} title={'/3    Your finances'} progress={19 / 26} display={'flex'} />
 
-      <Text style={styles.title_text}>What’s your mobile number?</Text>
+      <Text style={styles.title_text}>How much do you pay each month towards your utilities?</Text>
 
-      <Text style={styles.desc_text}>We will need your mobile phone number to send you security numbers and important news about your account.</Text>
+      <Text style={styles.desc_text}>Such as water, gas, electricity, mobile and broadband.</Text>
 
-      <TextFiled style={styles.input} label="Mobile phone number" type='numeric' onChange={(text) => setInput(text)} />
+      <TextFiled style={styles.input} label="Amount (£)" type='numeric' onChange={(text) => setInput(text)} />
 
-      <ButtonOrange style={styles.btn} title='Next' opacity={input == '' ? 0.5 : 1} onPress={() => { input == '' ? null : router.push('/organic/OtpVerification') }} />
-
+      <ButtonOrange style={styles.btn} title='Next' opacity={input == '' ? 0.5 : 1} onPress={() => { input == '' ? null : router.push('/organic/Travel') }} />
     </View>
   );
 }
@@ -39,12 +38,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Primary.navy,
     paddingTop: pxToDp(16),
-    top: 0
   },
   title_text: {
     ...Heading2,
     color: Secondary.white,
     marginTop: pxToDp(24),
+    marginHorizontal: (16)
   },
   desc_text: {
     ...Regular3,
@@ -54,13 +53,6 @@ const styles = StyleSheet.create({
   },
   input: {
     marginTop: pxToDp(24),
-  },
-  hint_text: {
-    ...Samll,
-    color: TextLight.low,
-    letterSpacing: pxToDp(-0.24),
-    marginTop: pxToDp(24),
-    marginHorizontal: pxToDp(16),
   },
   btn: {
     position: 'absolute',

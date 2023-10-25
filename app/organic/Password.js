@@ -2,71 +2,67 @@ import {
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
-  ScrollView,
   StatusBar,
 } from 'react-native';
 import React, { useState } from 'react';
-import { useRouter } from 'expo-router';
-import { pxToDp } from '../tools/Dimension'
-import { colors, Heading2, Regular3, Samll } from '../GlobalStyle'
+import { router } from 'expo-router';
+import { pxToDp } from '../Dimension'
+import { Heading2, Regular3, Samll } from '../FontFamily'
+import { Primary, Secondary, TextLight } from '../Colors'
 import { Header } from '../components/HeaderBar'
 import { ButtonOrange } from '../components/Button';
-import { TextFiled } from '../components/TextInput';
+import { PasswordInput } from '../components/TextInput';
 
 export default function App() {
-  const navigation = useRouter()
-  const [text, onChangeText] = useState("");
+  const [input, setInput] = useState('');
+
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style="auto" backgroundColor='#19233C' />
+    <View style={styles.container}>
+      <StatusBar backgroundColor={Primary.navy} />
 
-      <ScrollView >
-        <View >
-          <Header step={'1'} progress={5 / 26} display={'flex'} />
+      <Header step={'1'} title={'/3    Account setup'} progress={5 / 26} display={'flex'} />
 
-          <Text style={styles.title_text}>Create a password for your account</Text>
+      <Text style={styles.title_text}>Create a password for your account</Text>
 
-          <Text style={styles.desc_text}>Your password is used to protect and secure your account with us.</Text>
+      <Text style={styles.desc_text}>Your password is used to protect and secure your account with us.</Text>
 
-          <TextFiled style={styles.input} label="Password" text={text} keyboardType='email-address' onChange={onChangeText} />
+      <PasswordInput style={styles.input} label="Password" onChange={(text) => setInput(text)} />
 
-          <ButtonOrange style={{ marginTop: pxToDp(240) }} title='Next' opacity={0.5} onPress={() => navigation.push('/organic/SecurityNumber')} />
+      <ButtonOrange style={styles.btn} title='Next' opacity={input == '' ? 0.5 : 1} onPress={() => { input == '' ? null : router.push('/organic/SecurityNumber') }} />
 
-        </View>
-      </ScrollView>
-
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.navy,
+    backgroundColor: Primary.navy,
     paddingTop: pxToDp(16),
   },
   title_text: {
     ...Heading2,
-    color: colors.white,
+    color: Secondary.white,
     marginTop: pxToDp(24),
   },
   desc_text: {
     ...Regular3,
-    color: colors.light_text,
+    color: TextLight.low,
     marginTop: pxToDp(24),
     marginHorizontal: pxToDp(16)
   },
   input: {
-    height: pxToDp(56),
-    top: pxToDp(24),
-    marginHorizontal: pxToDp(16),
+    marginTop: pxToDp(24),
   },
   hint_text: {
     ...Samll,
-    color: colors.light_text,
+    color: TextLight.low,
     letterSpacing: pxToDp(-0.24),
     marginTop: pxToDp(24),
     marginHorizontal: pxToDp(16),
+  },
+  btn: {
+    position: 'absolute',
+    bottom: pxToDp(15)
   },
 });

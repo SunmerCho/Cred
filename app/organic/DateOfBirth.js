@@ -7,8 +7,8 @@ import {
 import React, { useState } from 'react';
 import { router } from 'expo-router';
 import { pxToDp } from '../Dimension'
-import { Heading2, Regular3 } from '../FontFamily'
-import { Primary, Secondary, TextLight } from '../Colors'
+import { Heading2} from '../FontFamily'
+import { Primary, Secondary } from '../Colors'
 import { Header } from '../components/HeaderBar'
 import { ButtonOrange } from '../components/Button';
 import { TextFiled } from '../components/TextInput';
@@ -20,15 +20,13 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar backgroundColor={Primary.navy} />
 
-      <Header step={'1'} title={'/3    Account setup'} progress={4 / 26} display={'flex'} />
+      <Header step={'2'} title={'/3    Personal details'} progress={10 / 26} display={'flex'} />
 
-      <Text style={styles.title_text}>Whats your email address?</Text>
+      <Text style={styles.title_text}>What’s your date of birth?</Text>
 
-      <Text style={styles.desc_text}>We need you to create an account so you can access your funds.</Text>
+      <TextFiled style={styles.input} label="DD/MM/YYYY" type='numeric' onChange={(text) => setInput(text)} />
 
-      <TextFiled style={styles.input} label="Email address" onChange={(text) => setInput(text)} />
-
-      <ButtonOrange style={styles.btn} title='Next' opacity={input == '' ? 0.5 : 1} onPress={() => { input == '' ? null : router.push('/organic/Password') }} />
+      <ButtonOrange style={styles.btn} title='Next' opacity={input == '' ? 0.5 : 1} onPress={() => { input == '' ? null : router.push('/organic/Address') }} />
     </View>
   );
 }
@@ -44,14 +42,8 @@ const styles = StyleSheet.create({
     color: Secondary.white,
     marginTop: pxToDp(24),
   },
-  desc_text: {
-    ...Regular3,
-    color: TextLight.low,
-    marginTop: pxToDp(24),
-    marginHorizontal: pxToDp(16)
-  },
   input: {
-    marginTop: pxToDp(24),
+    top: pxToDp(24),
   },
   btn: {
     position: 'absolute',

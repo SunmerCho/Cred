@@ -1,24 +1,25 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { pxToDp, pxToDpW } from '../tools/Dimension';
-import { colors, MediumStrong } from '.././GlobalStyle'
+import { pxToDp, pxToDpW } from '../Dimension';
+import { MediumStrong } from '../FontFamily'
+import { Primary, Secondary, TextLight } from '../Colors'
 import { Button } from 'react-native-paper';
-
-export function ButtonBorderWhite(props) {
-  return (
-    <Button mode='outlined' style={[styles.btn_common, props.style, { borderColor: colors.white, borderWidth: pxToDp(1) }]} labelStyle={styles.btn_text} children={props.title} onPress={props.onPress} />
-  );
-}
 
 export function ButtonBorderOrange(props) {
   return (
-    <Button mode='outlined' style={[styles.btn_common, props.style, { borderColor: colors.orange, borderWidth: pxToDp(1) }]} labelStyle={styles.btn_text} children={props.title} onPress={props.onPress} />
+    <Button mode='outlined' style={[styles.btn_common, { borderColor: Primary.orange, borderWidth: pxToDp(1) }, props.style]} labelStyle={styles.btn_text} children={props.title} onPress={props.onPress} />
+  );
+}
+
+export function ButtonBorderWhite(props) {
+  return (
+    <Button mode='outlined' style={[styles.btn_common, { borderColor: Secondary.white, borderWidth: pxToDp(1) }, props.style]} labelStyle={[styles.btn_text, { color: Secondary.white, }]} children={props.title} onPress={props.onPress} />
   );
 }
 
 export function ButtonOrange(props) {
   return (
-    <Button opacity={props.opacity} mode='contained' buttonColor={colors.orange} style={[styles.btn_common, props.style]} labelStyle={[styles.btn_text, { color: colors.navy }]} children={props.title} onPress={props.onPress} />
+    <Button opacity={props.opacity} mode='contained' buttonColor={Primary.orange} style={[styles.btn_common, props.style]} labelStyle={[styles.btn_text, { color: Primary.navy }]} children={props.title} onPress={props.onPress} />
   );
 }
 
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
   btn_text: {
     ...MediumStrong,
     textAlign: 'center',
-    color: colors.light_text,
+    color: TextLight.low,
   },
   btn_common: {
     width: pxToDpW(358),
@@ -37,14 +38,14 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   btn_border_white: {
-    borderColor: colors.white,
+    borderColor: Secondary.white,
     borderWidth: pxToDp(1),
   },
   btn_border_orange: {
-    borderColor: colors.orange,
+    borderColor: Primary.orange,
     borderWidth: pxToDp(1),
   },
   btn_orange: {
-    backgroundColor: colors.orange
+    backgroundColor: Primary.orange
   },
 });

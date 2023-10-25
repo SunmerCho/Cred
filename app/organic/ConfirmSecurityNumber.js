@@ -18,7 +18,7 @@ export default function App() {
         setInput(text);
 
         if (text.length == 6) {
-            router.push('organic/ConfirmSecurityNumber')
+            router.push('organic/Title')
         }
     }
     
@@ -26,11 +26,11 @@ export default function App() {
         <View style={styles.container}>
             <StatusBar backgroundColor={Primary.navy} />
 
-            <Header step={'1'} title={'/3    Account setup'} progress={6 / 26} display={'flex'} />
+            <Header step={'1'} title={'/3    Account setup'} progress={7 / 26} display={'flex'} />
 
-            <Text style={styles.title_text}>Create security number</Text>
+            <Text style={styles.title_text}>Re-enter security number</Text>
 
-            <Text style={styles.desc_text}>Enter a memorable 6 digit security number which you will need to use to access you account on this device.</Text>
+            <Text style={styles.desc_text}>Make sure it matches your last entry.</Text>
 
             <TextInput style={styles.input} keyboardType='numeric' onChangeText={handleInput} maxLength={6} autoFocus={true}/>
 
@@ -51,9 +51,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: Primary.navy,
         paddingTop: pxToDp(16),
-    },
-    pin: {
-        alignSelf: 'center',
     },
     title_text: {
         ...Heading2,
