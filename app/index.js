@@ -11,9 +11,9 @@ import { useFonts } from 'expo-font';
 import { router } from 'expo-router';
 import { Heading4, Medium, MediumStrong } from './FontFamily'
 import { Primary, Secondary, TextLight } from './Colors'
-import { pxToDp, pxToDpW, windowWidth, windowHeight } from './Dimension'
-import BgHome from '../assets/svgs/home-bg.svg'
-import Logo from '../assets/svgs/text_cred.svg'
+import { pxToDp, pxToDpW } from './Dimension'
+import BgHome from '../assets/svgs/bg_home.svg'
+import Logo from '../assets/svgs/logo_cred.svg'
 import { Button } from 'react-native-paper';
 
 SplashScreen.preventAutoHideAsync();
@@ -47,7 +47,7 @@ export default function App() {
 
       <Button mode='contained' style={styles.btn} buttonColor={Primary.orange} children={'Create an account'} labelStyle={[MediumStrong, { color: Primary.navy }]} onPress={() => router.push('/Decision')} />
 
-      <Button mode='outlined' style={[styles.btn, { borderColor: Secondary.white, borderWidth: 1 }]} children={'Already got a code'} labelStyle={[MediumStrong, { color: Secondary.white }]} onPress={() => router.push('/organic/T$Cs')} />
+      <Button mode='outlined' style={[styles.btn, { borderColor: Secondary.white, borderWidth: 1 }]} children={'Already got a code'} labelStyle={[MediumStrong, { color: Secondary.white }]} onPress={() => router.push('/Lander')} />
 
       <Pressable onPress={() => router.push('/Decision')}>
         <View style={styles.login}>

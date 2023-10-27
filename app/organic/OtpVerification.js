@@ -10,7 +10,7 @@ import { pxToDp, pxToDpW } from '../Dimension'
 import { Heading2, Regular3, MediumStrong, MediumStrong2 } from '../FontFamily'
 import { Primary, Secondary, TextLight } from '../Colors'
 import { Header } from '../components/HeaderBar'
-import Pin from '../../assets/svgs/pin.svg'
+import Pic from '../../assets/svgs/pic_otp.svg'
 import { Button, TextInput } from 'react-native-paper';
 
 export default function App() {
@@ -29,7 +29,7 @@ export default function App() {
 
             <Header step={'1'} title={'/3    Account setup'} progress={3 / 26} display={'flex'} />
 
-            <Pin width={pxToDp(75)} height={pxToDp(73)} style={{ marginTop: pxToDp(30), alignSelf: 'center' }} />
+            <Pic width={pxToDp(75)} height={pxToDp(73)} style={{ marginTop: pxToDp(30), alignSelf: 'center' }} />
 
             <Text style={styles.title_text}>Please enter your verification code</Text>
 
@@ -58,9 +58,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: Primary.navy,
         paddingTop: pxToDp(16),
-    },
-    pin: {
-        alignSelf: 'center',
     },
     title_text: {
         ...Heading2,

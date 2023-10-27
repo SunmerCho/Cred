@@ -1,0 +1,38 @@
+<svg width="190" height="190" viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="95" cy="95" r="95" fill="#F5A054" />
+    <circle cx="95" cy="90" r="60" fill="#E58F42" />
+    <ellipse cx="135.164" cy="129.5" rx="20.1639" ry="20.5" transform="rotate(180 135.164 129.5)" fill="white" />
+    <ellipse cx="137.517" cy="129.5" rx="17.8115" ry="20.5" transform="rotate(180 137.517 129.5)" fill="#F5A054" />
+    <path
+        d="M153.5 121.434C154.674 123.992 155.328 126.838 155.328 129.836C155.328 140.972 146.3 150 135.164 150C124.028 150 115 140.972 115 129.836C115 118.7 124.028 109.672 135.164 109.672C138.428 109.672 141.511 110.448 144.238 111.824"
+        stroke="#19233C" stroke-width="4" stroke-linecap="round" />
+    <circle cx="149.655" cy="115.425" r="1.64" transform="rotate(180 149.655 115.425)" fill="#19233C" />
+    <line x1="127.975" y1="131" x2="133.146" y2="136.172" stroke="white" stroke-width="4" stroke-linecap="round" />
+    <line x1="133.146" y1="136.172" x2="143.972" y2="125.346" stroke="white" stroke-width="4" stroke-linecap="round" />
+    <circle cx="65.9645" cy="116.967" r="2.25" transform="rotate(113.729 65.9645 116.967)" fill="#19233C"
+        fill-opacity="0.3" />
+    <circle cx="29.9645" cy="115.965" r="2.25" transform="rotate(113.729 29.9645 115.965)" fill="#19233C"
+        fill-opacity="0.3" />
+    <circle cx="122.964" cy="62.9653" r="2.25" transform="rotate(113.729 122.964 62.9653)" fill="#19233C"
+        fill-opacity="0.3" />
+    <circle cx="142.964" cy="83.9653" r="2.25" transform="rotate(113.729 142.964 83.9653)" fill="#C9874F" />
+    <rect x="38" y="33" width="95" height="63" fill="white" />
+    <circle cx="52.9645" cy="95.9668" r="2.25" transform="rotate(113.729 52.9645 95.9668)" fill="#19233C" />
+    <circle cx="86.9645" cy="139.967" r="2.25" transform="rotate(113.729 86.9645 139.967)" fill="#19233C"
+        fill-opacity="0.2" />
+    <circle cx="158.964" cy="42.9653" r="2.25" transform="rotate(113.729 158.964 42.9653)" fill="#E58F42" />
+    <circle cx="53.9645" cy="146.965" r="2.25" transform="rotate(113.729 53.9645 146.965)" fill="#19233C"
+        fill-opacity="0.5" />
+    <circle cx="142.964" cy="27.9653" r="2.25" transform="rotate(113.729 142.964 27.9653)" fill="#19233C"
+        fill-opacity="0.4" />
+    <path
+        d="M46 96H42C39.7909 96 38 94.2091 38 92V37C38 34.7909 39.7909 33 42 33H129C131.209 33 133 34.7909 133 37V92C133 94.2091 131.209 96 129 96H59.5"
+        stroke="#19233C" stroke-width="4" stroke-linecap="round" />
+    <rect x="43" y="46" width="89" height="7" fill="#768DC6" />
+    <path d="M76 78C77.7538 80.9664 81.3494 83 85.5 83C89.6506 83 93.2462 80.9664 95 78" stroke="#19233C"
+        stroke-width="4" stroke-linecap="round" />
+    <circle cx="73" cy="66" r="3" fill="#19233C" />
+    <circle cx="98" cy="66" r="3" fill="#19233C" />
+    <line x1="39" y1="45" x2="132" y2="45" stroke="#19233C" stroke-width="4" />
+    <line x1="39" y1="54" x2="132" y2="54" stroke="#19233C" stroke-width="4" />
+</svg>

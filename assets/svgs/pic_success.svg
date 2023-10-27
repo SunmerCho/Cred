@@ -1,0 +1,11 @@
+<svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="icon64/sucess">
+        <rect id="Rectangle 104" y="22" width="54" height="54" rx="27" fill="#434B60" />
+        <path id="Ellipse 54"
+            d="M71.2957 20.3182C73.0334 24.1894 74 28.4818 74 33C74 50.1208 60.1208 64 43 64C25.8792 64 12 50.1208 12 33C12 15.8792 25.8792 2 43 2C49.4404 2 55.4221 3.96399 60.3788 7.32572"
+            stroke="#D1D3D8" stroke-width="3.3" stroke-linecap="round" />
+        <path id="Vector 4" d="M29 33.9091L37.75 43L57 23" stroke="#F5A054" stroke-width="3.3" stroke-linecap="round"
+            stroke-linejoin="round" />
+        <circle id="Ellipse 55" cx="66.65" cy="12.65" r="1.65" fill="white" />
+    </g>
+</svg>

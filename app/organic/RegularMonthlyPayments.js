@@ -48,6 +48,6 @@ const styles = StyleSheet.create({
   },
   btn: {
     position: 'absolute',
-    bottom: pxToDp(15)
+    bottom: pxToDp(16)
   },
 });

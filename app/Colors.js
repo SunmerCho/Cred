@@ -28,6 +28,7 @@ export const Secondary = {
     light_grey: '#bbbbb9',
     ex_light_grey: '#EBEBEA',
     white: '#FFFFFF',
+    blue: '#768DC6'
 }
 
 export const TextLight = {

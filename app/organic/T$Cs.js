@@ -6,14 +6,14 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { router } from 'expo-router';
-import { Checkbox } from '../components/CheckBox';
+import { CheckboxSquare } from '../components/CheckBox';
 import { pxToDp, pxToDpW } from '../Dimension'
 import { Primary, Secondary, TextLight } from '../Colors'
 import { Heading2, Heading5, Medium, Samll, SamllStrong } from '../FontFamily'
 import { ButtonBorderWhite, ButtonOrange } from '../components/Button';
 import { Header } from '../components/HeaderBar'
 import { Divider } from 'react-native-paper';
-import Document from '../../assets/svgs/document.svg'
+import Document from '../../assets/svgs/ic_document.svg'
 import Arrow from '../../assets/svgs/ic_arrow_down.svg'
 
 export default function App() {
@@ -62,12 +62,12 @@ export default function App() {
 
         <View style={styles.methods}>
           <Text style={styles.methods_text}>Email </Text>
-          <Checkbox checked={emailChecked} onChange={() => setEmailChecked(!emailChecked)} />
+          <CheckboxSquare checked={emailChecked} onChange={() => setEmailChecked(!emailChecked)} />
         </View>
 
         <View style={styles.methods}>
           <Text style={styles.methods_text}>SMS </Text>
-          <Checkbox checked={smsChecked} onChange={() => setSmsChecked(!smsChecked)} />
+          <CheckboxSquare checked={smsChecked} onChange={() => setSmsChecked(!smsChecked)} />
         </View>
 
       </View>
