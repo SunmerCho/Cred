@@ -6,9 +6,9 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { router } from 'expo-router';
-import { pxToDp, pxToDpW } from '../Dimension'
-import { Heading2, Medium } from '../FontFamily'
-import { Primary, Secondary, TextLight } from '../Colors'
+import { pxToDp, pxToDpW } from '../styles/Dimension'
+import { Heading2, Medium } from '../styles/FontFamily'
+import { Primary, Secondary, TextLight } from '../styles/Colors'
 import Back from '../../assets/svgs/ic_back.svg'
 import { ButtonOrange } from '../components/Button';
 import { DropdownInput } from '../components/TextInput';
@@ -17,7 +17,7 @@ import { DropdownInput } from '../components/TextInput';
 export default function App() {
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor={Primary.navy} />
+            <StatusBar backgroundColor={Primary.navy100} />
 
             <Back width={pxToDp(24)} height={pxToDp(24)} style={{ marginTop: pxToDp(16), marginLeft: pxToDp(20) }} onPress={() => router.back()} />
 
@@ -41,7 +41,7 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Primary.navy,
+        backgroundColor: Primary.navy100,
     },
     tip: {
         ...Medium,

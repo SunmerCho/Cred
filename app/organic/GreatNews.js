@@ -6,16 +6,16 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { router } from 'expo-router';
-import { pxToDp} from '../Dimension'
-import { Large, LargeStrong, Medium2, Heading1, Heading3, Heading4, Heading5 } from '../FontFamily'
-import { Primary, Secondary, TextLight } from '../Colors'
+import { pxToDp} from '../styles/Dimension'
+import { Large, LargeStrong, Medium2, Heading1, Heading3, Heading4, Heading5 } from '../styles/FontFamily'
+import { Primary, Secondary, TextLight } from '../styles/Colors'
 import Pic from '../../assets/svgs/pic_success.svg'
 import { ButtonOrange } from '../components/Button';
 
 export default function App() {
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor={Primary.navy} />
+            <StatusBar backgroundColor={Primary.navy100} />
 
             <Pic width={pxToDp(76)} height={pxToDp(76)} style={{ marginTop: pxToDp(102), alignSelf: 'center' }} />
 
@@ -44,7 +44,7 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Primary.navy,
+        backgroundColor: Primary.navy100,
         alignItems: 'center',
     },
     btn: {

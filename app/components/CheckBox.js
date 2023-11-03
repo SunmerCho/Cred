@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet } from 'react-native';
-import { pxToDp } from '../Dimension';
-import { Primary } from '../Colors'
+import { pxToDp } from '../styles/Dimension';
+import { Primary } from '../styles/Colors'
 import Checked from '../../assets/svgs/ic_checked.svg';
 
 export function CheckboxSquare({ onChange, checked }) {

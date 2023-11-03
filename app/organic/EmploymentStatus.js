@@ -1,16 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text } from 'react-native';
-import { pxToDp } from '../Dimension'
+import { pxToDp } from '../styles/Dimension'
 import { router } from 'expo-router';
-import { Primary, Secondary } from '../Colors'
-import { Heading2 } from '../FontFamily'
+import { Primary, Secondary } from '../styles/Colors'
+import { Heading2 } from '../styles/FontFamily'
 import { ButtonOrange } from '../components/Button';
 import { Header } from '../components/HeaderBar'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={Primary.navy} />
+      <StatusBar backgroundColor={Primary.navy100} />
 
       <Header step={'2'} title={'/3    Personal details'} progress={13 / 26} display={'flex'} />
 
@@ -39,7 +39,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Primary.navy,
+    backgroundColor: Primary.navy100,
     paddingTop: pxToDp(16),
 
   },

@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { pxToDp, pxToDpW } from '../Dimension';
-import { MediumStrong } from '../FontFamily'
-import { Primary, Secondary, TextLight } from '../Colors'
+import { pxToDp, pxToDpW } from '../styles/Dimension';
+import { AppMediumStrong } from '../styles/FontFamily'
+import { Primary, Secondary, TextLight } from '../styles/Colors'
 import { Button } from 'react-native-paper';
 
 export function ButtonBorderOrange(props) {
@@ -19,18 +19,18 @@ export function ButtonBorderWhite(props) {
 
 export function ButtonOrange(props) {
   return (
-    <Button opacity={props.opacity} mode='contained' buttonColor={Primary.orange} style={[styles.btn_common, props.style]} labelStyle={[styles.btn_text, { color: Primary.navy }]} children={props.title} onPress={props.onPress} />
+    <Button opacity={props.opacity} mode='contained' buttonColor={Primary.orange} style={[styles.btn_common, props.style]} labelStyle={[styles.btn_text, { color: Primary.navy800 }]} children={props.title} onPress={props.onPress} />
   );
 }
 
 const styles = StyleSheet.create({
   btn_text: {
-    ...MediumStrong,
+    ...AppMediumStrong,
     textAlign: 'center',
     color: TextLight.low,
   },
   btn_common: {
-    width: pxToDpW(358),
+    width: pxToDpW(342),
     height: pxToDp(48),
     borderRadius: pxToDp(4),
     alignContent: 'center',

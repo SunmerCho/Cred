@@ -6,9 +6,9 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { router } from 'expo-router';
-import { pxToDp, pxToDpW } from '../Dimension'
-import { Medium2, MediumStrong2, Heading2, Heading3, Heading4, Heading5, Samll } from '../FontFamily'
-import { Primary, Secondary, TextLight } from '../Colors'
+import { pxToDp, pxToDpW } from '../styles/Dimension'
+import { Medium2, MediumStrong2, Heading2, Heading3, Heading4, Heading5, Samll } from '../styles/FontFamily'
+import { Primary, Secondary, TextLight } from '../styles/Colors'
 import Back from '../../assets/svgs/ic_back.svg'
 import Minus from '../../assets/svgs/ic_minus.svg'
 import Plus from '../../assets/svgs/ic_plus.svg'
@@ -17,7 +17,7 @@ import { ButtonOrange } from '../components/Button';
 export default function App() {
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor={Primary.navy} />
+            <StatusBar backgroundColor={Primary.navy100} />
 
             <Back width={pxToDp(24)} height={pxToDp(24)} style={{ marginTop: pxToDp(16), marginLeft: pxToDp(20) }} onPress={() => router.back()} />
 
@@ -68,7 +68,7 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Primary.navy,
+        backgroundColor: Primary.navy100,
     },
     box: {
         backgroundColor: Primary.navy90,

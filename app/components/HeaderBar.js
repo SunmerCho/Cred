@@ -1,12 +1,13 @@
 
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { pxToDp, pxToDpW } from '../Dimension';
-import { ProgressBar } from 'react-native-paper';
-import { Regular1, Regular2 } from '../FontFamily';
-import { Primary, Secondary, TextLight } from '../Colors'
-import Back from '../../assets/svgs/ic_back.svg'
 import { router } from 'expo-router';
+import { View, Text, StyleSheet } from 'react-native';
+import { pxToDp, pxToDpW } from '../styles/Dimension';
+import { ProgressBar } from 'react-native-paper';
+import { Regular1, Regular2 } from '../styles/FontFamily';
+import { Primary, Secondary, TextLight } from '../styles/Colors'
+import Back from '../../assets/svgs/ic_back.svg'
+
 
 export function Header(props) {
     return (
@@ -22,6 +23,14 @@ export function Header(props) {
 
             <Back width={pxToDp(24)} height={pxToDp(24)} style={{ left: pxToDp(20), position: 'absolute', display: props.display }} onPress={() => router.back()} />
 
+        </View>
+    );
+}
+
+export function BackHeader() {
+    return (
+        <View style={{ height: pxToDp(56), width: '100%', justifyContent: 'center' }}>
+            <Back width={pxToDp(24)} height={pxToDp(24)} style={{ left: pxToDp(20) }} onPress={() => router.back()} />
         </View>
     );
 }

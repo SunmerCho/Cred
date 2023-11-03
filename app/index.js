@@ -1,20 +1,16 @@
-import {
-  Text,
-  View,
-  StyleSheet,
-  Pressable,
-  StatusBar
-} from 'react-native';
+import { Text, View, StyleSheet, StatusBar } from 'react-native';
 import React, { useCallback } from 'react'
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
 import { router } from 'expo-router';
-import { Heading4, Medium, MediumStrong } from './FontFamily'
-import { Primary, Secondary, TextLight } from './Colors'
-import { pxToDp, pxToDpW } from './Dimension'
-import BgHome from '../assets/svgs/bg_home.svg'
-import Logo from '../assets/svgs/logo_cred.svg'
-import { Button } from 'react-native-paper';
+import { DisplayXsRegular, TextMdRegular, AppMediumStrong } from './styles/FontFamily'
+import { Primary, Secondary, TextLight } from './styles/Colors'
+import { pxToDp, pxToDpW } from './styles/Dimension'
+import Cred from '../assets/svgs/logo_lander.svg'
+import Home from '../assets/svgs/bg_home.svg'
+import HalfCircle from '../assets/svgs/bg_half_circle.svg'
+import { ButtonOrange } from './components/Button'
+import { Button, Divider } from 'react-native-paper';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -37,24 +33,29 @@ export default function App() {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <StatusBar backgroundColor={Primary.orange} />
+      <StatusBar backgroundColor={Primary.navy100} />
 
-      <BgHome width={'100%'} height={'100%'} style={{ position: 'absolute' }} />
+      <Cred width={pxToDp(120)} height={pxToDp(40)} style={{ marginTop: pxToDp(80) }} />
 
-      <Logo width={pxToDp(152)} height={pxToDp(50)} style={{ marginTop: pxToDp(158) }} />
+      <HalfCircle width={pxToDp(340)} height={pxToDp(168)} style={{ marginTop: pxToDp(180) }} />
 
-      <Text style={styles.tip_text}>A new flexible form of credit, that puts you in control</Text>
+      <Home width={pxToDp(192)} height={pxToDp(287)} style={{ position: 'absolute', marginTop: pxToDp(180) }} />
 
-      <Button mode='contained' style={styles.btn} buttonColor={Primary.orange} children={'Create an account'} labelStyle={[MediumStrong, { color: Primary.navy }]} onPress={() => router.push('/Decision')} />
+      <Text style={styles.titile_text}>Next generation credit</Text>
 
-      <Button mode='outlined' style={[styles.btn, { borderColor: Secondary.white, borderWidth: 1 }]} children={'Already got a code'} labelStyle={[MediumStrong, { color: Secondary.white }]} onPress={() => router.push('/Lander')} />
+      <Text style={styles.tip_text}>A flexible line of credit to be used in a way that suits you</Text>
 
-      <Pressable onPress={() => router.push('/Decision')}>
-        <View style={styles.login}>
-          <Text style={styles.ask_text}>Already have an account?</Text>
-          <Text style={styles.login_text}>Login</Text>
+      <View style={{ position: 'absolute', flex: 1, bottom: pxToDp(20) }}>
+        <ButtonOrange title='Already got a code?' onPress={() => null} />
+
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: pxToDp(8) }}>
+          <Button style={styles.btn} labelStyle={styles.btn_text} children='Create account' onPress={() => null} />
+
+          <Divider style={{ width: pxToDpW(1), height: pxToDp(24), backgroundColor: Primary.navy40 }} />
+
+          <Button style={styles.btn} labelStyle={styles.btn_text} children='Login' onPress={() => router.push('/login/Email')} />
         </View>
-      </Pressable>
+      </View>
 
     </View>
   );
@@ -64,41 +65,27 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-between'
+    backgroundColor: Primary.navy100
+  },
+  titile_text: {
+    ...DisplayXsRegular,
+    color: Secondary.white,
+    marginTop: pxToDp(62)
   },
   tip_text: {
-    ...Heading4,
-    fontSize: pxToDp(18),
-    color: Primary.navy,
-    marginHorizontal: pxToDp(30),
-    marginTop: pxToDp(36),
-    flex: 1
+    ...TextMdRegular,
+    color: TextLight.low,
+    marginHorizontal: pxToDpW(36),
+    marginTop: pxToDp(8)
   },
   btn: {
-    width:pxToDpW(340),
+    width: pxToDpW(164),
     height: pxToDp(48),
-    borderRadius: pxToDp(4),
-    alignContent: 'center',
     justifyContent: 'center',
-    marginBottom: pxToDp(8)
+    borderRadius: 0,
   },
-  login: {
-    width: pxToDpW(218),
-    height: pxToDp(48),
-    borderRadius: pxToDp(4),
-    alignContent: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: pxToDp(16),
-  },
-  ask_text: {
-    ...Medium,
-    color: TextLight.low
-  },
-  login_text: {
-    ...MediumStrong,
-    marginLeft: pxToDp(10),
-    color: Secondary.white
+  btn_text: {
+    ...AppMediumStrong,
+    color: Primary.navy40
   },
 });

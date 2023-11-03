@@ -1,15 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text} from 'react-native';
-import { pxToDp } from '../Dimension'
+import { pxToDp } from '../styles/Dimension'
 import { router } from 'expo-router';
-import { Primary, TextLight } from '../Colors'
-import { Medium } from '../FontFamily'
+import { Primary, TextLight } from '../styles/Colors'
+import { Medium } from '../styles/FontFamily'
 import { ButtonBorderOrange } from '../components/Button';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={Primary.navy} />
+      <StatusBar backgroundColor={Primary.navy100} />
 
       <Text style={styles.ask_text}>Is the postcode ‘out of area’? </Text>
 
@@ -23,7 +23,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Primary.navy
+    backgroundColor: Primary.navy100
   },
   ask_text: {
     ...Medium,

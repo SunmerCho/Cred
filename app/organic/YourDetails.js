@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text } from 'react-native';
-import { pxToDp, pxToDpW } from '../Dimension'
+import { pxToDp, pxToDpW } from '../styles/Dimension'
 import { router } from 'expo-router';
-import { Primary, TextLight } from '../Colors'
-import { Heading2, Large, ParagraphMedium, ParagraphSamll } from '../FontFamily'
+import { Primary, TextLight } from '../styles/Colors'
+import { Heading2, Large, ParagraphMedium, ParagraphSamll } from '../styles/FontFamily'
 import { Divider } from 'react-native-paper';
 import { ButtonOrange } from '../components/Button';
 import Pen from '../../assets/svgs/ic_pen.svg'
@@ -11,7 +11,7 @@ import Pen from '../../assets/svgs/ic_pen.svg'
 export default function App() {
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={Primary.navy} />
+      <StatusBar backgroundColor={Primary.navy100} />
 
       <Text style={styles.title_text}>Your details</Text>
 
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: Primary.navy
+    backgroundColor: Primary.navy100
   },
   title_text: {
     ...Heading2,

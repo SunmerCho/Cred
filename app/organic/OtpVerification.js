@@ -6,9 +6,9 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { router } from 'expo-router';
-import { pxToDp, pxToDpW } from '../Dimension'
-import { Heading2, Regular3, MediumStrong, MediumStrong2 } from '../FontFamily'
-import { Primary, Secondary, TextLight } from '../Colors'
+import { pxToDp, pxToDpW } from '../styles/Dimension'
+import { Heading2, Regular3, AppMediumStrong, MediumStrong2 } from '../styles/FontFamily'
+import { Primary, Secondary, TextLight } from '../styles/Colors'
 import { Header } from '../components/HeaderBar'
 import Pic from '../../assets/svgs/pic_otp.svg'
 import { Button, TextInput } from 'react-native-paper';
@@ -25,7 +25,7 @@ export default function App() {
 
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor={Primary.navy} />
+            <StatusBar backgroundColor={Primary.navy100} />
 
             <Header step={'1'} title={'/3    Account setup'} progress={3 / 26} display={'flex'} />
 
@@ -48,7 +48,7 @@ export default function App() {
                 <View style={[styles.circle, { backgroundColor: input.length > 5 ? Primary.orange : Primary.navy60 }]} />
             </View>
 
-            <Button style={styles.sms_btn} children={'Haven’t received the SMS?'} labelStyle={[MediumStrong, { color: TextLight.low }]} onPress={() => router.push('organic/EmailAddress')} />
+            <Button style={styles.sms_btn} children={'Haven’t received the SMS?'} labelStyle={[AppMediumStrong, { color: TextLight.low }]} onPress={() => router.push('organic/EmailAddress')} />
         </View>
     );
 }
@@ -56,7 +56,7 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Primary.navy,
+        backgroundColor: Primary.navy100,
         paddingTop: pxToDp(16),
     },
     title_text: {

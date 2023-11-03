@@ -6,9 +6,9 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { router } from 'expo-router';
-import { pxToDp } from '../Dimension'
-import { Heading2, MediumStrong } from '../FontFamily'
-import { Primary, Secondary, TextLight } from '../Colors'
+import { pxToDp } from '../styles/Dimension'
+import { Heading2, AppMediumStrong } from '../styles/FontFamily'
+import { Primary, Secondary, TextLight } from '../styles/Colors'
 import { Header } from '../components/HeaderBar'
 import { ButtonOrange } from '../components/Button';
 import { TextFiled } from '../components/TextInput';
@@ -19,7 +19,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={Primary.navy} />
+      <StatusBar backgroundColor={Primary.navy100} />
 
       <Header step={'2'} title={'/3    Personal details'} progress={11 / 26} display={'flex'} />
 
@@ -37,7 +37,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Primary.navy,
+    backgroundColor: Primary.navy100,
     paddingTop: pxToDp(16),
   },
   title_text: {
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     bottom: pxToDp(16)
   },
   manually: {
-    ...MediumStrong,
+    ...AppMediumStrong,
     textAlign: 'center',
     color: TextLight.low,
     marginTop: pxToDp(38),

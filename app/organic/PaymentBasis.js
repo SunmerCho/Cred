@@ -6,9 +6,9 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { router } from 'expo-router';
-import { pxToDp, pxToDpW } from '../Dimension'
-import { Heading2, Heading4, Medium } from '../FontFamily'
-import { Primary, Secondary, TextLight } from '../Colors'
+import { pxToDp, pxToDpW } from '../styles/Dimension'
+import { Heading2, Heading4, Medium } from '../styles/FontFamily'
+import { Primary, Secondary, TextLight } from '../styles/Colors'
 import { CheckboxRound } from '../components/CheckBox';
 import Back from '../../assets/svgs/ic_back.svg'
 import { ButtonOrange } from '../components/Button';
@@ -20,7 +20,7 @@ export default function App() {
 
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor={Primary.navy} />
+            <StatusBar backgroundColor={Primary.navy100} />
 
             <Back width={pxToDp(24)} height={pxToDp(24)} style={{ marginTop: pxToDp(16), marginLeft: pxToDp(20) }} onPress={() => router.back()} />
 
@@ -57,7 +57,7 @@ const Item = (props) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Primary.navy,
+        backgroundColor: Primary.navy100,
     },
     box: {
         height: pxToDp(54),

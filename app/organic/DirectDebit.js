@@ -7,17 +7,17 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { router } from 'expo-router';
-import { pxToDp, pxToDpW } from '../Dimension'
-import { Heading2, Heading4, Heading5, Medium, Samll } from '../FontFamily'
-import { Primary, Secondary, TextLight } from '../Colors'
+import { pxToDp, pxToDpW } from '../styles/Dimension'
+import { Heading2, Heading4, Heading5, Medium, Samll } from '../styles/FontFamily'
+import { Primary, Secondary, TextLight } from '../styles/Colors'
 import Back from '../../assets/svgs/ic_back.svg'
 import Pic from '../../assets/svgs/pic_pre-contractual.svg'
 import { ButtonOrange } from '../components/Button';
 
 export default function App() {
     return (
-        <View style={{ flex: 1, backgroundColor: Primary.navy, }}>
-            <StatusBar backgroundColor={Primary.navy} />
+        <View style={{ flex: 1, backgroundColor: Primary.navy100, }}>
+            <StatusBar backgroundColor={Primary.navy100} />
 
             <ScrollView style={{ flex: 1, marginBottom: pxToDp(90) }}>
                 <View style={{ flex: 1 }}>

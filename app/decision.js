@@ -1,14 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, } from 'react-native';
-import { pxToDp } from './Dimension'
+import { pxToDp } from './styles/Dimension'
 import { router } from 'expo-router';
-import { Primary } from './Colors'
+import { Primary } from './styles/Colors'
 import { ButtonBorderOrange } from './components/Button';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={Primary.navy} />
+      <StatusBar backgroundColor={Primary.navy100} />
 
       <ButtonBorderOrange title='Organic' onPress={() => router.push('/organic/T$Cs')} />
 
@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: Primary.navy
+    backgroundColor: Primary.navy100
   }
 });

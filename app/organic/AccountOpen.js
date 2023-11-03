@@ -6,9 +6,9 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { router } from 'expo-router';
-import { pxToDp } from '../Dimension'
-import { Heading2, Medium } from '../FontFamily'
-import { Primary, TextLight } from '../Colors'
+import { pxToDp } from '../styles/Dimension'
+import { Heading2, Medium } from '../styles/FontFamily'
+import { Primary, TextLight } from '../styles/Colors'
 import Pic from '../../assets/svgs/pic_account_open.svg'
 import { ButtonOrange } from '../components/Button';
 
@@ -16,7 +16,7 @@ export default function App() {
 
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor={Primary.navy} />
+            <StatusBar backgroundColor={Primary.navy100} />
 
             <Pic width={pxToDp(190)} height={pxToDp(190)} style={{ marginTop: pxToDp(78), alignSelf: 'center' }} />
 
@@ -30,7 +30,7 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Primary.navy
+        backgroundColor: Primary.navy100
     },
     title_text: {
         ...Heading2,

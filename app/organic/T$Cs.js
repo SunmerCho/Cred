@@ -7,9 +7,9 @@ import {
 import React, { useState } from 'react';
 import { router } from 'expo-router';
 import { CheckboxSquare } from '../components/CheckBox';
-import { pxToDp, pxToDpW } from '../Dimension'
-import { Primary, Secondary, TextLight } from '../Colors'
-import { Heading2, Heading5, Medium, Samll, SamllStrong } from '../FontFamily'
+import { pxToDp, pxToDpW } from '../styles/Dimension'
+import { Primary, Secondary, TextLight } from '../styles/Colors'
+import { Heading2, Heading5, Medium, Samll, SamllStrong } from '../styles/FontFamily'
 import { ButtonBorderWhite, ButtonOrange } from '../components/Button';
 import { Header } from '../components/HeaderBar'
 import { Divider } from 'react-native-paper';
@@ -87,12 +87,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Primary.navy,
+    backgroundColor: Primary.navy100,
     paddingTop: pxToDp(16)
   },
   container2: {
     flex: 1,
-    backgroundColor: Primary.navy
+    backgroundColor: Primary.navy100
   },
   title_text: {
     ...Heading2,

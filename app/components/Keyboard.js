@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Pressable, StyleSheet } from 'react-native';
-import { pxToDp, pxToDpW } from '../Dimension';
-import { Primary,TextLight } from '../Colors'
+import { pxToDp, pxToDpW } from '../styles/Dimension';
+import { Primary,TextLight } from '../styles/Colors'
 import { Button } from 'react-native-paper';
 import Delete from '../../assets/svgs/ic_delete.svg'
 import Tab from '../../assets/svgs/ic_keyboard_tab.svg'

@@ -3,7 +3,7 @@
     "name": "cred",
     "slug": "cred",
     "version": "1.0.0",
-    "scheme":"uk.co.getcred.app",
+    "scheme": "uk.co.getcred.app",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
@@ -16,13 +16,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "bundleIdentifier": "uk.co.getcred.app"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "uk.co.getcred.app"
     },
     "web": {
       "favicon": "./assets/favicon.png"

@@ -6,9 +6,9 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { router } from 'expo-router';
-import { pxToDp } from '../Dimension'
-import { Heading2, Regular3, Samll } from '../FontFamily'
-import { Primary, Secondary, TextLight } from '../Colors'
+import { pxToDp } from '../styles/Dimension'
+import { Heading2, Regular3, Samll } from '../styles/FontFamily'
+import { Primary, Secondary, TextLight } from '../styles/Colors'
 import { Header } from '../components/HeaderBar'
 import { ButtonOrange } from '../components/Button';
 import { TextFiled } from '../components/TextInput';
@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={Primary.navy}  />
+      <StatusBar backgroundColor={Primary.navy100}  />
 
       <Header step={'1'} title={'/3    Account setup'} progress={2 / 26} display={'flex'} />
 
@@ -37,7 +37,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Primary.navy,
+    backgroundColor: Primary.navy100,
     paddingTop: pxToDp(16),
     top: 0
   },
